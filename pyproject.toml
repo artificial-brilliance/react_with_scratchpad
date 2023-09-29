@@ -1,15 +1,17 @@
-[tool.poetry]
+[project]
 name = "react_with_scratchpad"
-version = "0.1.0"
+version = "0.0.1"
 description = ""
-authors = ["Dominic Kramer"]
+authors = [
+    {name = "Dominic Kramer", email = "DominicKramer@gmail.com"},
+]
+dependencies = [
+    "openai>=0.28.1",
+]
+requires-python = ">=3.11"
 readme = "README.md"
+license = {text = "Apache 2.0"}
 
-[tool.poetry.dependencies]
-python = "^3.11"
-openai = "^0.28.0"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.pdm.scripts]
+start = "src/react_with_scratchpad/main.py"
+test = "python -m unittest discover -v -s tests -p '*_test.py'"
